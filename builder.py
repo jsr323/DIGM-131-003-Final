@@ -1,1 +1,1 @@
-# Input validation and error handling
+ # Core placement and transform functions

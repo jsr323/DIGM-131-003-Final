@@ -1,1 +1,35 @@
+===================================================
+pieces.py — The kit bash library
 
+Walls (flat, with window cutout, with door cutout)
+Floor/ceiling slabs
+Roof types (flat, angled)
+Stairs, railings
+Simple furniture (couch, table, bed)
+
+builder.py — Core placement logic
+
+Place a piece at a grid position
+Snap pieces to each other
+Rotate/mirror pieces
+Randomize material colors/finishes
+
+scene_manager.py — File I/O
+
+Save current layout to a JSON file
+Load a saved layout and rebuild it in Maya
+Clear the scene
+
+validator.py — Error handling & input validation
+
+Check for overlapping pieces
+Validate grid positions
+Warn on missing inputs
+
+ui.py — The Maya window
+
+Buttons for each piece type
+Grid coordinate inputs
+Save/Load buttons
+A "randomize finishes" button
+===================================================

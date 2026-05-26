@@ -8,17 +8,14 @@ position, and rotation defined from the house layout data.
 All functions follow the same signature pattern:
     create_<type>(name, width, height, depth, tx, ty, tz, rx, ry, rz)
 
-Author: [Your Name]
-Course: [Course Name]
+Author: Jillian Richards
+Course: DIGM 131
 """
 
 import maya.cmds as cmds
 
 
-# ---------------------------------------------------------------------------
 # WALL BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_wall(name="wall", width=1.0, height=1.0, depth=1.0,
                 tx=0.0, ty=0.0, tz=0.0,
                 rx=0.0, ry=0.0, rz=0.0):
@@ -56,10 +53,7 @@ def create_wall(name="wall", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # FLOOR BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_floor(name="floor", width=1.0, height=1.0, depth=1.0,
                  tx=0.0, ty=0.0, tz=0.0,
                  rx=0.0, ry=0.0, rz=0.0):
@@ -97,10 +91,7 @@ def create_floor(name="floor", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # ROOF BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_roof(name="roof", width=1.0, height=1.0, depth=1.0,
                 tx=0.0, ty=0.0, tz=0.0,
                 rx=0.0, ry=0.0, rz=0.0):
@@ -138,10 +129,7 @@ def create_roof(name="roof", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # FENCE BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_fence(name="fence", width=1.0, height=1.0, depth=1.0,
                  tx=0.0, ty=0.0, tz=0.0,
                  rx=0.0, ry=0.0, rz=0.0):
@@ -179,10 +167,7 @@ def create_fence(name="fence", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # PILLAR BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_pillar(name="pillar", width=1.0, height=1.0, depth=1.0,
                   tx=0.0, ty=0.0, tz=0.0,
                   rx=0.0, ry=0.0, rz=0.0):
@@ -220,10 +205,7 @@ def create_pillar(name="pillar", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # FLOWER BED BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_flower_bed(name="flowerbed", width=1.0, height=1.0, depth=1.0,
                       tx=0.0, ty=0.0, tz=0.0,
                       rx=0.0, ry=0.0, rz=0.0):
@@ -261,10 +243,7 @@ def create_flower_bed(name="flowerbed", width=1.0, height=1.0, depth=1.0,
     return obj
 
 
-# ---------------------------------------------------------------------------
 # STAIR BUILDERS
-# ---------------------------------------------------------------------------
-
 def create_stair(name="stair", width=1.0, height=1.0, depth=1.0,
                  tx=0.0, ty=0.0, tz=0.0,
                  rx=0.0, ry=0.0, rz=0.0):

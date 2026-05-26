@@ -5,8 +5,8 @@ Data-driven configuration and dispatcher engine for the Modular Modern
 House Builder tool. Contains the full house layout config list, the
 BUILDERS dispatcher dictionary, and the create_element() routing function.
 
-Author: [Your Name]
-Course: [Course Name]
+Author: Jillian Richards
+Course: DIGM 131
 """
 
 import maya.cmds as cmds
@@ -20,14 +20,10 @@ from builder import (
     create_stair,
 )
 
-# ---------------------------------------------------------------------------
 # DEBUG FLAG — set to True to print detailed trace output
-# ---------------------------------------------------------------------------
 DEBUG = True
 
-# ---------------------------------------------------------------------------
 # BUILDERS — dispatcher dictionary mapping type names to builder functions
-# ---------------------------------------------------------------------------
 BUILDERS = {
     "wall":       create_wall,
     "floor":      create_floor,
@@ -38,10 +34,8 @@ BUILDERS = {
     "stair":      create_stair,
 }
 
-# ---------------------------------------------------------------------------
 # CONFIG — full house layout data (8+ entries, 7 element types)
 # Each entry maps directly to a builder function via the "type" key.
-# ---------------------------------------------------------------------------
 CONFIG = [
 
     # --- WALLS ---
@@ -122,10 +116,7 @@ CONFIG = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # DISPATCHER
-# ---------------------------------------------------------------------------
-
 def create_element(entry):
     """
     Route a single config entry to the correct builder function.
@@ -177,10 +168,7 @@ def create_element(entry):
         return None
 
 
-# ---------------------------------------------------------------------------
 # DRIVER LOOP — processes the full CONFIG list
-# ---------------------------------------------------------------------------
-
 def build_all():
     """
     Iterate over the full CONFIG list and build every element.

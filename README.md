@@ -94,6 +94,7 @@ Checklist O Done  X Not Done
 O Project runs without errors
 O 2+ modules (builder.py + core_utils.py + main.py)
 O 3+ builder functions with docstrings and defaults (7 functions)
+O Materials.py with 3 materials
 O Config data list with 8+ entries (60+ entries)
 O BUILDERS dispatcher dict
 O create_element() dispatcher

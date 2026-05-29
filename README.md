@@ -1,5 +1,6 @@
 Maya Modular Modern House Builder
-I wrote this in the CODE mode not the
+I wrote this in the CODE mode not the Preview Mode, so it looks crazy if it is not in the Code tab... Sorry!
+
 A Maya Python automation tool that procedurally builds a modern house scene
 from a data-driven configuration list. Each architectural element — walls,
 floors, roofs, fences, pillars, flower beds, and stairs — is defined as a

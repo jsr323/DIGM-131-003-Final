@@ -36,9 +36,10 @@ BUILDERS = {
 
 # CONFIG — full house layout data (8+ entries, 7 element types)
 # Each entry maps directly to a builder function via the "type" key.
+# Maybe there was a better way to do this because this took forever...
 CONFIG = [
 
-    # --- WALLS ---
+    # WALLS
     {"type": "wall", "name": "Wall1",  "width": 4.0,  "height": 1.0, "depth": 10.0, "tx": -2.0,  "ty": 18.0, "tz": -9.5,  "rx": -90, "ry": 0,   "rz": 0},
     {"type": "wall", "name": "Wall2",  "width": 10.0, "height": 1.0, "depth": 10.0, "tx": -5.0,  "ty": 18.0, "tz": 9.5,   "rx": -90, "ry": 0,   "rz": 0},
     {"type": "wall", "name": "Wall3",  "width": 18.5, "height": 0.5, "depth": 7.0,  "tx": 0.0,   "ty": 9.0,  "tz": -4.0,  "rx": -90, "ry": 0,   "rz": 0},
@@ -57,7 +58,7 @@ CONFIG = [
     {"type": "wall", "name": "Wall16", "width": 14.5, "height": 0.5, "depth": 13.0, "tx": 4.0,   "ty": 7.0,  "tz": -22.5, "rx": -90, "ry": 0,   "rz": 0},
     {"type": "wall", "name": "Wall17", "width": 6.5,  "height": 0.2, "depth": 9.0,  "tx": 2.0,   "ty": 9.0,  "tz": -26.2, "rx": -90, "ry": 90,  "rz": 0},
 
-    # --- FLOORS ---
+    # FLOORS
     {"type": "floor", "name": "Floor1",  "width": 23.0, "height": 1.0, "depth": 21.0, "tx": 0.0,  "ty": 13.0, "tz": 0.0,   "rx": 0, "ry": 0,  "rz": 0},
     {"type": "floor", "name": "Floor2",  "width": 25.0, "height": 1.0, "depth": 21.0, "tx": 0.0,  "ty": 5.0,  "tz": 0.0,   "rx": 0, "ry": 0,  "rz": 0},
     {"type": "floor", "name": "Floor3",  "width": 20.0, "height": 0.1, "depth": 18.0, "tx": 0.0,  "ty": 0.5,  "tz": 0.0,   "rx": 0, "ry": 0,  "rz": 0},
@@ -69,7 +70,7 @@ CONFIG = [
     {"type": "floor", "name": "Floor9",  "width": 7.0,  "height": 0.5, "depth": 2.0,  "tx": 15.5, "ty": 4.1,  "tz": -19.0, "rx": 0, "ry": 90, "rz": 0},
     {"type": "floor", "name": "Floor10", "width": 13.0, "height": 0.5, "depth": 14.0, "tx": -4.5, "ty": 4.5,  "tz": -23.0, "rx": 0, "ry": 90, "rz": 0},
 
-    # --- FENCES ---
+    #FENCES
     {"type": "fence", "name": "Fence1", "width": 6.0,  "height": 1.0, "depth": 1.5, "tx": 9.0,   "ty": 6.0,  "tz": -9.5, "rx": -90, "ry": 0,   "rz": 0},
     {"type": "fence", "name": "Fence2", "width": 10.0, "height": 1.0, "depth": 1.5, "tx": 7.0,   "ty": 6.0,  "tz": 9.5,  "rx": -90, "ry": 0,   "rz": 0},
     {"type": "fence", "name": "Fence3", "width": 18.0, "height": 1.0, "depth": 1.5, "tx": 11.5,  "ty": 6.0,  "tz": 0.0,  "rx": -90, "ry": -90, "rz": 0},
@@ -77,18 +78,18 @@ CONFIG = [
     {"type": "fence", "name": "Fence5", "width": 1.5,  "height": 1.5, "depth": 6.5, "tx": 11.5,  "ty": 1.0,  "tz": -26.0,"rx": 0,   "ry": 0,   "rz": 0},
     {"type": "fence", "name": "Fence6", "width": 10.0, "height": 1.0, "depth": 3.0, "tx": 5.0,   "ty": 15.0, "tz": -9.5, "rx": -90, "ry": 0,   "rz": 0},
 
-    # --- ROOFS ---
+    # ROOFS
     {"type": "roof", "name": "Roof1", "width": 10.0, "height": 1.0, "depth": 20.0, "tx": -5.0, "ty": 23.0, "tz": 0.0,   "rx": 0, "ry": 0, "rz": 0},
     {"type": "roof", "name": "Roof2", "width": 23.0, "height": 1.0, "depth": 14.0, "tx": 0.0,  "ty": 14.0, "tz": -23.5, "rx": 0, "ry": 0, "rz": 0},
 
-    # --- PILLARS ---
+    #PILLARS
     {"type": "pillar", "name": "Pillar1", "width": 4.0, "height": 2.0, "depth": 5.0, "tx": -8.0, "ty": 3.0, "tz": 8.0,    "rx": -90, "ry": 0, "rz": 0},
     {"type": "pillar", "name": "Pillar2", "width": 4.0, "height": 2.0, "depth": 5.0, "tx": 8.0,  "ty": 3.0, "tz": 8.0,    "rx": -90, "ry": 0, "rz": 0},
     {"type": "pillar", "name": "Pillar3", "width": 0.5, "height": 4.0, "depth": 0.5, "tx": 20.0, "ty": 6.0, "tz": -16.5,  "rx": 0,   "ry": 0, "rz": 0},
     {"type": "pillar", "name": "Pillar4", "width": 0.5, "height": 4.0, "depth": 0.5, "tx": 20.0, "ty": 6.0, "tz": -20.0,  "rx": 0,   "ry": 0, "rz": 0},
     {"type": "pillar", "name": "Pillar5", "width": 0.5, "height": 4.0, "depth": 0.5, "tx": 20.0, "ty": 8.0, "tz": -18.25, "rx": -90, "ry": 0, "rz": 0},
 
-    # --- FLOWER BEDS ---
+    #FLOWER BEDS
     {"type": "flowerbed", "name": "FlowerBed1",  "width": 5.0, "height": 6.0, "depth": 5.0,  "tx": 11.5, "ty": 3.5,  "tz": -13.0, "rx": 0, "ry": 0,   "rz": 0},
     {"type": "flowerbed", "name": "FlowerBed2",  "width": 5.0, "height": 4.0, "depth": 6.0,  "tx": 14.0, "ty": 2.5,  "tz": -9.0,  "rx": 0, "ry": 0,   "rz": 0},
     {"type": "flowerbed", "name": "FlowerBed3",  "width": 5.0, "height": 3.0, "depth": 3.0,  "tx": 14.0, "ty": 2.0,  "tz": -5.5,  "rx": 0, "ry": 0,   "rz": 0},
@@ -103,7 +104,7 @@ CONFIG = [
     {"type": "flowerbed", "name": "FlowerBed12", "width": 5.0, "height": 3.0, "depth": 13.5, "tx": -5.5, "ty": 2.0,  "tz": 11.0,  "rx": 0, "ry": -90, "rz": 0},
     {"type": "flowerbed", "name": "FlowerBed13", "width": 5.0, "height": 2.0, "depth": 5.0,  "tx": 3.5,  "ty": 1.5,  "tz": 11.0,  "rx": 0, "ry": -90, "rz": 0},
 
-    # --- STAIRS ---
+    # STAIRS
     {"type": "stair", "name": "Stair1", "width": 4.5, "height": 0.5, "depth": 1.5, "tx": 18.5, "ty": 0.75, "tz": -0.2, "rx": 0, "ry": 0, "rz": 0},
     {"type": "stair", "name": "Stair2", "width": 4.5, "height": 0.5, "depth": 1.5, "tx": 18.5, "ty": 1.2,  "tz": -1.2, "rx": 0, "ry": 0, "rz": 0},
     {"type": "stair", "name": "Stair3", "width": 4.5, "height": 0.5, "depth": 1.5, "tx": 18.5, "ty": 1.5,  "tz": -2.2, "rx": 0, "ry": 0, "rz": 0},

@@ -2,8 +2,9 @@
 main.py
 -------
 Entry point for the Modular Modern House Builder tool.
-Sets up sys.path so Maya can locate the project modules, then runs
-the full house build by calling build_all() from core_utils.
+Sets up sys.path so Maya can locate the project modules, builds the full
+house geometry via build_all(), then applies all three materials via
+build_all_materials().
 
 Run this file directly in the Maya Script Editor to build the house.
 
@@ -15,7 +16,7 @@ import sys
 import os
 
 # sys.path block — ensures Maya can find all project modules.
-# Reminder to myself to update this path to wherever I saved the project files
+# Update this path to wherever you saved the project files.
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
@@ -23,6 +24,7 @@ if PROJECT_DIR not in sys.path:
 # Project imports
 import maya.cmds as cmds
 from core_utils import build_all, CONFIG
+from materials import build_all_materials
 
 # SELF-TEST — runs when this file is executed directly in Maya
 if __name__ == "__main__":
@@ -30,14 +32,23 @@ if __name__ == "__main__":
     print("  Modular Modern House Builder — Self Test")
     print("=" * 60)
     print(f"  Config entries loaded : {len(CONFIG)}")
-    print(f"  Starting build...")
+    print(f"  Step 1: Building geometry...")
     print("=" * 60)
 
+    # Step 1 — build all geometry
     created_objects = build_all()
 
     print("=" * 60)
-    print(f"  Build finished. {len(created_objects)} objects in viewport.")
+    print(f"  Geometry complete: {len(created_objects)} objects created.")
+    print(f"  Step 2: Applying materials...")
     print("=" * 60)
 
-    # Frame all objects in the viewport so the house is visible
+    # Step 2 — create and assign all materials
+    build_all_materials()
+
+    print("=" * 60)
+    print("  Build and materials complete.")
+    print("=" * 60)
+
+    # Frame all objects in the viewport
     cmds.viewFit(all=True)

@@ -37,20 +37,24 @@ def create_wall(name="wall", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create wall '{name}': {e}")
+        return None
 
 
 # FLOOR BUILDERS
@@ -75,20 +79,24 @@ def create_floor(name="floor", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create floor '{name}': {e}")
+        return None
 
 
 # ROOF BUILDERS
@@ -113,20 +121,24 @@ def create_roof(name="roof", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create roof '{name}': {e}")
+        return None
 
 
 # FENCE BUILDERS
@@ -151,20 +163,24 @@ def create_fence(name="fence", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create fence '{name}': {e}")
+        return None
 
 
 # PILLAR BUILDERS
@@ -189,20 +205,24 @@ def create_pillar(name="pillar", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create pillar '{name}': {e}")
+        return None
 
 
 # FLOWER BED BUILDERS
@@ -227,20 +247,24 @@ def create_flower_bed(name="flowerbed", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create flower bed '{name}': {e}")
+        return None
 
 
 # STAIR BUILDERS
@@ -265,17 +289,21 @@ def create_stair(name="stair", width=1.0, height=1.0, depth=1.0,
 
     Returns
     -------
-    str : The name of the created Maya object.
+    str or None : The name of the created Maya object, or None if failed.
     """
     if width <= 0 or height <= 0 or depth <= 0:
         cmds.warning(f"[builder] '{name}' skipped — size values must be > 0.")
         return None
 
-    obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
-    cmds.setAttr(f"{obj}.translateX", tx)
-    cmds.setAttr(f"{obj}.translateY", ty)
-    cmds.setAttr(f"{obj}.translateZ", tz)
-    cmds.setAttr(f"{obj}.rotateX", rx)
-    cmds.setAttr(f"{obj}.rotateY", ry)
-    cmds.setAttr(f"{obj}.rotateZ", rz)
-    return obj
+    try:
+        obj = cmds.polyCube(w=width, h=height, d=depth, name=name)[0]
+        cmds.setAttr(f"{obj}.translateX", tx)
+        cmds.setAttr(f"{obj}.translateY", ty)
+        cmds.setAttr(f"{obj}.translateZ", tz)
+        cmds.setAttr(f"{obj}.rotateX", rx)
+        cmds.setAttr(f"{obj}.rotateY", ry)
+        cmds.setAttr(f"{obj}.rotateZ", rz)
+        return obj
+    except Exception as e:
+        cmds.warning(f"[builder] Failed to create stair '{name}': {e}")
+        return None

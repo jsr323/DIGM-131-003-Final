@@ -233,16 +233,16 @@ def open_house_builder_ui():
     # Main column layout
     cmds.columnLayout(adjustableColumn=True, rowSpacing=6, columnOffset=("both", 10))
 
-    # ── Title ──────────────────────────────────────────────────────────────
+    #Title
     cmds.separator(height=8, style="none")
     cmds.text(label="MODULAR HOUSE BUILDER", font="boldLabelFont", height=22)
     cmds.separator(height=4, style="in")
 
-    # ── Piece Type Selector ────────────────────────────────────────────────
+    #Piece Type Selector
     cmds.text(label="Select Piece Type:", align="left")
     cmds.separator(height=4, style="none")
 
-    # Two rows of type buttons
+    #Two rows of type buttons
     row1_types = ["wall", "floor", "roof", "fence"]
     row2_types = ["pillar", "flowerbed", "stair"]
 
@@ -266,20 +266,20 @@ def open_house_builder_ui():
         )
     cmds.setParent("..")
 
-    # Active type display label
+    #Active type display label
     cmds.separator(height=4, style="none")
     cmds.text("selectedTypeLabel", label="Selected:  WALL",
               font="boldLabelFont", align="left")
 
     cmds.separator(height=6, style="in")
 
-    # ── Name Field ─────────────────────────────────────────────────────────
+    #Name Field
     cmds.text(label="Object Name:", align="left")
     _fields["name"] = cmds.textField(placeholderText="e.g. Wall1")
 
     cmds.separator(height=6, style="in")
 
-    # ── Size Fields ────────────────────────────────────────────────────────
+    #Size Fields
     cmds.text(label="Size  (Width / Height / Depth):", align="left")
     cmds.rowLayout(numberOfColumns=3, columnWidth3=(95, 95, 95))
     _fields["width"]  = cmds.floatField(value=1.0, minValue=0.001,
@@ -299,7 +299,7 @@ def open_house_builder_ui():
 
     cmds.separator(height=6, style="in")
 
-    # ── Position Fields ────────────────────────────────────────────────────
+    #Position Fields
     cmds.text(label="Position  (X / Y / Z):", align="left")
     cmds.rowLayout(numberOfColumns=3, columnWidth3=(95, 95, 95))
     _fields["tx"] = cmds.floatField(value=0.0, precision=2, width=95)
@@ -307,7 +307,7 @@ def open_house_builder_ui():
     _fields["tz"] = cmds.floatField(value=0.0, precision=2, width=95)
     cmds.setParent("..")
 
-    # Position axis labels
+    #Position axis labels
     cmds.rowLayout(numberOfColumns=3, columnWidth3=(95, 95, 95))
     cmds.text(label="  X", align="center", width=95, font="smallBoldLabelFont")
     cmds.text(label="  Y", align="center", width=95, font="smallBoldLabelFont")
@@ -316,7 +316,7 @@ def open_house_builder_ui():
 
     cmds.separator(height=10, style="in")
 
-    # ── Action Buttons ─────────────────────────────────────────────────────
+    # Action Buttons
     cmds.button(
         label="BUILD PIECE",
         height=40,

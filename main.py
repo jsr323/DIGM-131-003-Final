@@ -17,7 +17,7 @@ import os
 
 # sys.path block — ensures Maya can find all project modules.
 # Update this path to wherever you saved the project files.
-PROJECT_DIR = os.path.dirname(os.path.abspath("C:\Users\jilli\OneDrive - Drexel University\Third Year\DIGM131\Final\Modern_Building\scripts\DIGM-131-003-Final-main\house_builder"))
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_DIR not in sys.path:
     sys.path.insert(0, PROJECT_DIR)
 

@@ -18,7 +18,7 @@ Open Maya -> Script Editor -> Python tab
 Paste and run:
 
 import sys
-sys.path.insert(0, r"C:/YOUR/PATH/TO/PROJECT")  # change to your actual path
+sys.path.insert(0, r"C:/YOUR/PATH/TO/PROJECT")  # your actual path
 
 import importlib
 import builder, core_utils, materials, ui
@@ -28,7 +28,10 @@ importlib.reload(core_utils)
 importlib.reload(materials)
 importlib.reload(ui)
 
-exec(open(r"C:/YOUR/PATH/TO/PROJECT").read())
+_main_path = r"C:/YOUR/PATH/TO/PROJECT"
+with open(_main_path) as f:
+    exec(compile(f.read(), _main_path, "exec"), {"__file__": _main_path})
+
 
 
 Key Functions

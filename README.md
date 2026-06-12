@@ -18,16 +18,18 @@ Open Maya -> Script Editor -> Python tab
 Paste and run:
 
 import sys
-sys.path.insert(0, "C:/YOUR/PATH/TO/PROJECT")  # update this
+sys.path.insert(0, r"C:/YOUR/PATH/TO/PROJECT")  # change to your actual path
 
 import importlib
 import builder, core_utils, materials, ui
+
 importlib.reload(builder)
 importlib.reload(core_utils)
 importlib.reload(materials)
 importlib.reload(ui)
 
-exec(open("C:/YOUR/PATH/TO/PROJECT/main.py").read())
+exec(open(r"C:/YOUR/PATH/TO/PROJECT").read())
+
 
 Key Functions
 create_wall()             builder.py   Wall segment polyCube
